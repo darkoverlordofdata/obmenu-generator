@@ -30,10 +30,12 @@ my $editor = $CONFIG->{editor};
 our $SCHEMA = [
 
     #          COMMAND                 LABEL              ICON
-    {item => ['xdg-open .',       'File Manager', 'system-file-manager']},
+    # {item => ['xdg-open .',       'File Manager', 'system-file-manager']},
     {item => ['sakura',            'Terminal',     'utilities-terminal']},
     {item => ['xdg-open http://', 'Web Browser',  'web-browser']},
     {item => ['dsbexec',            'Run command',  'system-run']},
+    {item => ['gnome-terminal -t htop -x htop',            'htop',     'utilities-system-monitor']},
+    {pipe => ["/home/darko/bin/pcmanfm-bookmarks", "Places", "system-file-manager"]},
 
     {sep => 'Categories'},
 
@@ -99,11 +101,11 @@ our $SCHEMA = [
     {sep => undef},
 
     ## The xscreensaver lock command
-    {item => ['metalock -t badabing', 'Lock', 'system-lock-screen']},
+    {item => ['catlock', 'Lock', 'system-lock-screen']},
 
     ## This option uses the default Openbox's "Exit" action
-    {exit => ['Exit', 'application-exit']},
+    # {exit => ['Exit', 'application-exit']},
 
     ## This uses the 'oblogout' menu
-    # {item => ['oblogout', 'Exit', 'application-exit']},
+    {item => ['~/bin/exit-nomad.sh', 'Exit', 'application-exit']},
 ]
